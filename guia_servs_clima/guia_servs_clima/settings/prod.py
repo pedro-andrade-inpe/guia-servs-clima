@@ -3,7 +3,8 @@ from sentry_sdk.integrations.django import DjangoIntegration
 
 from .base import *
 
-ALLOWED_HOSTS = ['www.gclima.dpi.inpe.br']
+#ALLOWED_HOSTS = ['www.gclima.dpi.inpe.br', '150.163.2.227:8080']
+ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 

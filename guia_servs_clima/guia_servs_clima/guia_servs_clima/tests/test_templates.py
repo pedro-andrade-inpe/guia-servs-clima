@@ -24,6 +24,82 @@ def test_navbar_link_home_disponivel(resp_home):
     assert_contains(resp_home, reverse('home'))
 
 
+def test_navbar_texto_orgao_governo_disponivel(resp_home):
+    """Testa se no navbar o texto 'ORGÃOS DO GOVERNO' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+
+    assert_contains(resp_home, 'ORGÃOS DO GOVERNO')
+
+
+def test_navbar_link_orgao_governo_disponivel(resp_home):
+    """Testa se no navbar o link 'ORGÃOS DO GOVERNO' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+    assert_contains(resp_home, 'https://www.gov.br/pt-br/orgaos-do-governo/')
+
+
+def test_navbar_texto_participe_disponivel(resp_home):
+    """Testa se no navbar o texto 'PARTICIPE' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+
+    assert_contains(resp_home, 'PARTICIPE')
+
+
+def test_navbar_link_participe_disponivel(resp_home):
+    """Testa se no navbar o link 'PARTICIPE' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+    assert_contains(resp_home, 'https://www.gov.br/pt-br/participacao-social/')
+
+
+def test_navbar_texto_acesso_a_informacao_disponivel(resp_home):
+    """Testa se no navbar o texto 'ACESSO À INFORMAÇÃO' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+
+    assert_contains(resp_home, 'ACESSO À INFORMAÇÃO')
+
+
+def test_navbar_link_acesso_a_informacao_disponivel(resp_home):
+    """Testa se no navbar o link 'ACESSO À INFORMAÇÃO' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+    assert_contains(resp_home, 'https://www.gov.br/acessoainformacao/pt-br/')
+
+
+def test_navbar_texto_legislacao_disponivel(resp_home):
+    """Testa se no navbar o texto 'LEGISLAÇÃO' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+
+    assert_contains(resp_home, 'LEGISLAÇÃO')
+
+
+def test_navbar_link_legislacao_disponivel(resp_home):
+    """Testa se no navbar o link 'LEGISLAÇÃO' está disponível na view 'home'.
+
+    Args:
+        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
+    """
+    assert_contains(resp_home, 'http://www4.planalto.gov.br/legislacao/')
+
+
 def test_descricao_disponivel(resp_home):
     """Testa se no navbar o texto 'Faça o teste e descubra o melhor
      provedor de serviços climáticos para seu projeto!' está disponível na view 'home'.
@@ -68,16 +144,6 @@ def test_tipo_organicao_disponivel(resp_home):
     """
 
     assert_contains(resp_home, 'Você busca algum <strong>tipo específico de organização</strong>?')
-
-
-def test_navbar_texto_participe_disponivel(resp_home):
-    """Testa se no navbar o texto 'PARTICIPE' está disponível na view 'home'.
-
-    Args:
-        resp_home (fixture): Fixture que da acesso ao endpoint 'home'
-    """
-
-    assert_contains(resp_home, 'PARTICIPE')
 
 
 def test_navbar_link_criar_organizacao_disponivel(resp_home):
