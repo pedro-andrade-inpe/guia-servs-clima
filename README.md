@@ -1,5 +1,3 @@
-[![pipeline status](https://git21.znc.com.br/necto/guia-servs-clima/badges/main/pipeline.svg)](https://git21.znc.com.br/necto/guia-servs-clima/-/commits/main)
-[![coverage report](https://git21.znc.com.br/necto/guia-servs-clima/badges/main/coverage.svg)](https://git21.znc.com.br/necto/guia-servs-clima/-/commits/main)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-397/)
 [![docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://docs.docker.com/)
