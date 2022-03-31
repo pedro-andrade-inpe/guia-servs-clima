@@ -120,6 +120,9 @@
 
         <div class="col-md-9 col-sm-12 filter_organizacao">
             <div class="row">
+<div class="container" id="disclaimer-inpe-filter">
+    <p>INPE, MCTI e GIZ não são responsáveis pela veracidade ou exatidão das informações fornecidas pelas organizações e profissionais autônomos. As organizações e profissionais autônomos listados nesta página não configuram uma indicação do INPE, MCTI e da GIZ. Dessa forma, o usuário deve verificar por seus próprios meios a capacidade da organização ou do profissional autônomo de fornecer o serviço de interesse.</p>
+</div>
                 {% if page_obj.paginator.count%}
                     {% for organizacao in page_obj.object_list %}
                         <div class="col-md-4 col-sm-6 mb-5 filter-container-img">
