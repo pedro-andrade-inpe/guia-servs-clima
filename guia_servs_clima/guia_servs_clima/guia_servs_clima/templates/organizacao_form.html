@@ -1,0 +1,307 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load flatpages %}
+{% load widget_tweaks %}
+{% block extracss %}
+{{ form.media.css}}
+{% endblock extracss %}
+{% block content %}
+
+<!--Template Formulário-->
+<div class="container">
+    <div class="row">
+        <div class="mb-5 align-items-center">
+            <h2>Cadastre sua organização em nossa rede</h2>
+            <p>Faça parte do Guia Serviços Climáticos e aumente sua visibilidade
+            para centenas de pessoas, organizações e iniciativas da rede de provedores
+            de serviços climáticos do Brasil.<br> Para atualizar, alterar ou remover o cadastro,
+            entre em contato com o administrador do GuiaClima através do e-mail: contato@dpi.inpe.br
+            </p>
+        </div>
+            <form action="#" method="POST" class="row g-3 gy-6" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                {%include 'error-fields.html' %}
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label class="form-label" for="id_nome">Nome da organização ou nome fantasia da empresa (para profissional autônomo)</label>
+                        {{form.nome|add_class:"form-control"}}
+                    </div>
+                    <div class="text-danger">
+                        {{form.nome.errors}}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="id_website_organizacao">Website da organização (opcional)</label>
+                        {{form.website_organizacao|add_class:"form-control"|attr:"placeholder=www.exemplo.org.br"}}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="id_pessoa_contato">Nome da pessoa de contato</label>
+                        {{form.pessoa_contato|add_class:"form-control"}}
+                    </div>
+                    <div class="text-danger"> {{form.pessoa_contato.errors}} </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="telefone_contato">Telefone de contato da organização</label>
+                        {{form.telefone_contato|add_class:"form-control"|attr:"placeholder=(xx)xxxx-xxxx"}}
+                    </div>
+                    <div class="text-danger">{{form.telefone_contato.errors}} </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="email_contato">E-mail de contato da organização</label>
+                        {{form.email_contato|add_class:"form-control"|attr:"placeholder=exemplo@exemplo.com.br"}} 
+                    </div>
+                    <div class="text-danger">{{form.email_contato.errors}}</div>
+                </div>
+            {% include 'choices_endereco.html' %}
+             <div class="col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label for="">Tipo de organização</label>
+                        {{form.natureza_organizacao|add_class:"form-control"}}
+                    </div>
+                    <div class="text-danger">{{form.natureza_organizacao.errors}}</div>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <div class="form-group">
+                        <label for="">Logo</label>
+                        {{form.logo|add_class:'form-control'}}
+                    </div>
+                    <div class="text-danger">{{form.logo.errors}}</div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label for="id_sobre_organizacao">Sobre organização</label>
+                        {{form.sobre_organizacao|add_class:"form-control"}}
+                    </div>
+                    <div class="text-danger">{{form.sobre_organizacao.errors}}</div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseOne">
+                        <span class="text-white align-middle"><strong class="number-strong">1</strong></span>
+                        <span class="ms-4 h4-500 align-middle"><strong>Que tipo de produto você está oferecendo?</strong></span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body accordion-gradient">
+                            <div class="ml-4">
+                                {% for checkbox, forms_detalhes in form.forms_tipos_produto %}
+                                    <div class="input-options"> 
+                                        <label class="container-checkbox">
+                                            <span class="other-text">{{ checkbox.choice_label }}</span>
+                                            <div onclick="exibir_ocultar(this)">{{checkbox}}<span class="checkmark"></span></div>
+                                            <div class="detalhes_texto">{{forms_detalhes.detalhes_servico |add_class:'form-control'}}</div>
+                                        </label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-danger">{{form.tipos_produto.errors}}</div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        <span class="text-white align-middle"><strong class="number-strong">2</strong></span>
+                        <span class="ms-4 h4-500 align-middle"><strong>Quais são os setores e temas com os quais você/sua organização trabalha?</strong></span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body accordion-gradient">
+                            <div class="container-filter-icon">
+                                    {% for checkbox in form.setores_economicos %}
+                                        {{ checkbox }}
+                                    {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-danger">{{form.setores_economicos.errors}}</div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree">
+                        <span class="text-white align-middle"><strong class="number-strong">3</strong></span>
+                        <span class="ms-4 h4-500 align-middle"><strong>Quais os tipos mais adequados para classificar sua organização?</strong></span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body accordion-gradient">
+                            <div class="container-filter-icon">
+                                {% for checkbox in form.tipos_organizacao %}
+                                    {{ checkbox }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-danger">{{form.tipos_organizacao.errors}}</div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                        <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour">
+                        <span class="text-white align-middle"><strong class="number-strong">4</strong></span>
+                        <span class="ms-4 h4-500 align-middle"><strong>Os serviços oferecidos pela organização são pagos e/ou gratuitos?</strong></span>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingFour">
+                        <div class="accordion-body accordion-gradient">
+                            <div class="ml-4">
+                                {% for checkbox in form.tipos_pagamento %}
+                                    <div class="input-options"> 
+                                        <label class="container-checkbox">
+                                            <span class="other-text">{{ checkbox.choice_label }}</span>
+                                            {{ checkbox }}
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                {% endfor %}
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-danger">{{form.tipos_pagamento.errors}}</div>
+                </div>
+
+                <div class="row-12">
+                    <br><br>
+                    <div class="col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="id_observacao_adicional">Observações adicionais (opcional)</label>
+                            {{form.observacao_adicional|add_class:'form-control'}}
+                        </div>
+                        <div class="text-danger">{{form.observacao_adicional.errors}}</div>
+                    </div>
+                </div>
+
+                <div class="row-12">
+                    {{ form.termo_uso }} Concordo com o <a data-bs-toggle="modal" data-bs-target="#dadosModal" 
+                    data-url="/termo-de-uso/" data-checkbox="#id_termo_uso" href="#">Termo de Uso
+                </a>
+                </div>
+
+                <div class="row-12">
+                    {{ form.politica_privacidade }} Concordo com a <a data-bs-toggle="modal" data-bs-target="#dadosModal" 
+                    data-url="/politica-de-privacidade/" data-checkbox="#id_politica_privacidade" href="#">Política de Privacidade
+                </a>
+                </div>
+                <div id="botao-alinhado">
+                    <span id="tooltip-cadastro" class="d-inline-block" data-toggle="tooltip" 
+                    data-placement="top" title="Você deve aceitar o Termo de Uso e a Política de Privacidade">
+                        <button class="btn btn-success" 
+                      id="btn-submit-form" disabled type="submit">Submeter Cadastro</button></span>
+                </div>
+                <div style="text-align:center; padding:2rem; line-height:2rem">
+                    <p>
+                        O cadastro será analisado pelo corpo gestor do Guia Serviços Climáticos.
+                        Assim que possível, entraremos em contato pelo e-mail fornecido no formulário.
+                        Para atualizar, alterar ou remover o cadastro, entre em contato com o administrador do GuiaClima através do e-mail: contato@dpi.inpe.br
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Template Formulário-->
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="dadosModal" tabindex="-1" aria-labelledby="dadosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dadosModalLabel"></h5>
+        </div>
+        <div class="modal-body" id="dadosModalBody">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="botao-nao-aceito" class="btn btn-secondary" data-bs-dismiss="modal">Não Aceito</button>
+          <button type="button" id="botao-aceito" data-bs-dismiss="modal" class="btn btn-primary">Aceito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+
+{% endblock content %}
+
+{% block extrajs %}
+<script>
+    var __municipios_base_url__ = '/municipios_app/';
+</script>
+<script>
+
+    function exibir_ocultar(element){
+        var tipos_servico = $(element).find("[name=tipos_produto]")
+        var detalhes_servico = $(element).parent().find(".detalhes_texto textarea")
+        if (tipos_servico[0].checked == true){
+            detalhes_servico.show()
+        }
+        else{
+            detalhes_servico.hide()
+        }
+}
+</script>
+
+
+<script>
+    var current_checkbox;
+    $(document).ready(function(){
+        $('#tooltip-cadastro').tooltip();
+        $("#dadosModal").on("show.bs.modal", function(e){
+            var link = $(e.relatedTarget);
+            $("#dadosModalBody").load(link.data("url"));
+            $("#dadosModalLabel").html(link.html());
+            current_checkbox = $(link.data("checkbox"));
+        });
+        $("#botao-aceito").on("click", function(e){
+            current_checkbox.prop("checked", true).trigger('change');
+        }) ;
+        $("#botao-nao-aceito").on("click", function(e){
+            current_checkbox.prop("checked", false).trigger('change');
+        });
+        var habilita_desabilita_botao_submeter = function(e){
+            var termo_uso = $("#id_termo_uso").is(":checked");
+            var politica_privacidade = $("#id_politica_privacidade").is(":checked");
+            var termo_politica = !(termo_uso && politica_privacidade);
+            $("#btn-submit-form").prop("disabled", termo_politica);
+            $('#tooltip-cadastro').tooltip(termo_politica?"enable":"disable");
+        };
+        $("#id_termo_uso, #id_politica_privacidade").change(habilita_desabilita_botao_submeter);
+        $("#id_municipio").bind("DOMSubtreeModified", function(e){
+            $("#id_municipio option[value={{form.municipio_selecionado}}]").attr("selected", true);
+        });
+        changeUF($("#municipio_uf")[0]);
+        habilita_desabilita_botao_submeter();
+
+    });
+</script>
+
+{{ form.media.js }}
+{% endblock extrajs %}
+
+

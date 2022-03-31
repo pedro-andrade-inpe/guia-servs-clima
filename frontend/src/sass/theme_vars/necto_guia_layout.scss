@@ -1,0 +1,112 @@
+
+body{
+   overflow: scroll;
+   color: $base-color !important;
+   h1,h2, h3, h4{
+     color: $base-color;
+     font-weight: 800;
+     font-family: 'Muli', sans-serif;
+   }
+}
+
+
+
+.navbar {
+   font-size: 0.7rem;
+   height: 40px !important;
+   .navbar-brand{
+      font-size: 0.8rem;
+   }
+   &.navbar-dark{
+      background-color: #222222 !important;
+   }
+}
+
+header.header{
+   margin-top: 40px ;
+   background-color: $base-color;
+   .header-content{
+      background-color: $base-color;
+      height: 280px;
+      min-height: 280px;
+      h1{
+         color: #fff;
+      }
+      h2, h3, h4{
+         color: $gsc-light-orange;
+      }
+   }
+}
+
+#card-home.card{
+   background-color: $gsc-light-orange;
+}
+
+.form-group{
+   padding:10px;
+   position:relative;
+   border: 1px solid $gray-500;
+   border-radius: $border-radius;
+   //margin:10px;
+   //display: block;
+   label{
+      background-color: $body-bg;
+      position: absolute;
+      padding: 0 5px 0 5px;
+      top: -12px;
+      left: 12px;
+      font-weight: 600;
+      
+   }
+   input, select{
+      background-color: $body-bg;
+      border: none;
+      margin: 0px;
+      -webkit-appearance: none;
+      -ms-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+   }
+}
+
+textarea:focus, 
+textarea.form-control:focus, 
+select:focus,
+select.form-select:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.main-wrapper{
+   // align-items: stretch;
+   display: flex;
+   height: 100vh;
+}
+
+
+.accordion-item {
+    margin: 30px;
+}
+.accordion-header {
+
+}
+.accordion-button {
+    border-radius: $border-radius !important;
+    background-color: $gsc-light-blue !important;
+    padding: 7px !important;
+    box-shadow:5px 5px 10px #a1a1a1;
+    &::after{
+      font-size: 4rem;
+    }    
+}
+
+

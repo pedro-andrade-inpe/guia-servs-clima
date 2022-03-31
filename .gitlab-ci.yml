@@ -1,0 +1,65 @@
+stages:
+  - lint
+  - test
+  - deploy
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+linter:
+  stage: lint
+  image: gitlab/dind:latest
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - "which envsubst || ( apt-get update -y && apt-get install gettext-base -y )"
+    - envsubst < .env-test > .env
+  script:
+    - echo $IMAGE_TAG
+    - docker-compose down
+    - docker-compose build web
+    - docker-compose run --rm -u $(id -u ${USER}):$(id -g ${USER}) web flake8 .
+    - docker-compose down
+
+tests:
+  stage: test
+  image: gitlab/dind:latest
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - "which envsubst || ( apt-get update -y && apt-get install gettext-base -y )"
+    - envsubst < .env-test > .env
+  script:
+    - echo $IMAGE_TAG
+    - docker-compose down
+    - docker-compose up -d db
+    - sleep 10s
+    - docker-compose build web
+    - docker-compose run --rm -u $(id -u ${USER}):$(id -g ${USER}) web pytest guia_servs_clima --cov=guia_servs_clima --cov-report=term --cov-report=html
+    - docker-compose down
+  artifacts:
+    paths:
+      - guia_servs_clima/htmlcov
+
+deploy:
+  stage: deploy
+  before_script:
+    - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
+    - "which envsubst || ( apt-get update -y && apt-get install gettext-base -y )"
+    - eval $(ssh-agent -s)
+    - echo "$NECTO_INFRA_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - if ! grep "$(ssh-keyscan guiaservsclima.testes.necto.com.br 2>/dev/null)" ~/.ssh/known_hosts > /dev/null; then ssh-keyscan guiaservsclima.testes.necto.com.br >> ~/.ssh/known_hosts; fi
+    - docker-compose --version
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - envsubst < .env-homologacao > .env
+  script:
+    - echo $IMAGE_TAG
+    - docker-compose -f docker-compose-homologacao.yml build --no-cache web
+    - docker-compose -f docker-compose-homologacao.yml push web
+    - export DOCKER_HOST=ssh://root@guiaservsclima.testes.necto.com.br
+    - docker-compose -f docker-compose-homologacao.yml pull web
+    - docker-compose -f docker-compose-homologacao.yml down
+    - docker-compose -f docker-compose-homologacao.yml up -d
+    - docker exec guia_servs_clima_homologacao_web python manage.py migrate
+  only:
+    - main

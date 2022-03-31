@@ -1,0 +1,21 @@
+
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+
+
+@import "../../node_modules/bootstrap/scss/_functions";
+
+@import './theme_vars/necto_vars.scss';
+@import './theme_vars/necto_guia_layout.scss';
+@import "../../node_modules/bootstrap/scss/_variables";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+html,
+body {
+    height: 100%;
+}
+
+

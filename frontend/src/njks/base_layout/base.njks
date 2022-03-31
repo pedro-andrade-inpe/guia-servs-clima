@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {# CSS - adicione outros CSSs aqui #}
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    {% include "includes/include_css.njks" %}
+</head>
+<body class="container-fluid w-100 p-0">
+    <header class="header mb-5">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ms-auto">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" >GOV BR</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">PARTICIPE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SERVIÇOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LEGISLAÇÃO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ORGÃOS DO GOVERNO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+                 <div class="row">
+            <div class="header-content col-lg-12 pt-5">
+                <h3>GUIA</h3>
+                <h1>Serviços Climáticos</h1>
+                <h4 class="mt-4">O guia de provedores de serviços climáticos brasileiros</h4>
+                <p  class="mt-4 text-white">Idealização e realização: GIZ, Inpe</p>
+            </div>
+        </div>
+        </div>
+    </header>
+    <div class="container content">
+    {% block content %}
+
+    {% endblock content %}
+    </div>
+    {% include "includes/include_js.njks" %}
+
+    {% block extrajs %}
+
+    {% endblock extrajs %}
+
+</body>
+</html>

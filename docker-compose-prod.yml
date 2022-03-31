@@ -1,0 +1,57 @@
+version: "3.7"
+
+services:
+  web:
+    image: guiaserviceclima_prod_img
+    build:
+      context: .
+      args:
+        APP_NAME: ${APP_NAME}
+        ENVIRONMENT: ${ENVIRONMENT}
+    container_name: ${APP_NAME}_${ENVIRONMENT}_web
+    environment:
+      - APP_NAME
+      - SQL_ENGINE
+      - SQL_DATABASE
+      - SQL_USER
+      - SQL_PASSWORD
+      - SQL_HOST
+      - SQL_PORT
+      - DJANGO_SETTINGS_MODULE
+      - VIRTUAL_HOST
+      - VIRTUAL_PORT
+      - SECRET_KEY
+      - LINK_FORUM
+    volumes:
+      - /opt/nginxproxy/assets/${APP_NAME}:/assets/
+
+    ports:
+      - ${VIRTUAL_PORT}:${VIRTUAL_PORT}
+    expose:
+      - ${VIRTUAL_PORT}
+
+    networks:
+      - default
+
+    command: bash -c "gunicorn ${APP_NAME}.wsgi -t 7200 -w 3 -b 0.0.0.0:${VIRTUAL_PORT}"
+
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=${SQL_USER}
+      - POSTGRES_PASSWORD=${SQL_PASSWORD}
+      - POSTGRES_DB=${SQL_DATABASE}
+    networks:
+      - default
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: "${APP_NAME}_${ENVIRONMENT}_default"

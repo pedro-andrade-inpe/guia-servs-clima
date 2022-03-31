@@ -1,0 +1,136 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/estilo-saiba-mais.css' %}">
+</head>
+
+<div class="container" id="texto-pos-header">
+    <p>Se você tiver dúvidas ou reclamações sobre este website, entre em contato conosco pelo e-mail: <span style="color: red;">contato@dpi.inpe.br</span></p>
+</div>
+<body>
+<div class="container text-center my-3">
+        <h2 class="font-weight-light">Saiba mais</h2>
+        <div class="row mx-auto my-auto justify-content-center">
+            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img iframe-container">
+                                    <iframe id="video-youtube-1" src="https://www.youtube.com/embed/DmebXLOkpt4"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img iframe-container">
+                                    <iframe id="video-youtube-2" src="https://www.youtube.com/embed/4sTBWQEC2TA"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img iframe-container">
+                                    <iframe id="video-youtube-3" src="https://www.youtube.com/embed/szrfb7qZJbM"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img iframe-container">
+                                    <iframe id="video-youtube-4" src="https://www.youtube.com/embed/VW5R_rpDjm0"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img iframe-container">
+                                    <iframe id="video-youtube-5" src="https://www.youtube.com/embed/7l57kq9n3io"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev btn-prev" type="button" data-bs-target="#recipeCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next btn-next" type="button" data-bs-target="#recipeCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <div class="carousel-indicators">
+                    <button data-bs-target="#recipeCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                        aria-label="Slide 1"></button>
+                    <button data-bs-target="#recipeCarousel" data-bs-slide-to="1" class="inactive"
+                        aria-label="Slide 1"></button>
+                    <button data-bs-target="#recipeCarousel" data-bs-slide-to="2" class="inactive"
+                        aria-label="Slide 2"></button>
+                    <button data-bs-target="#recipeCarousel" data-bs-slide-to="3" class="inactive"
+                        aria-label="Slide 3"></button>
+                    <button data-bs-target="#recipeCarousel" data-bs-slide-to="4" class="inactive"
+                        aria-label="Slide 4"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="container-graficos">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-tablet-100">
+                <div class="imagem-graficos">
+                    {% autoescape off %}
+                    {{figura_tipos_organizacao|safe}}
+                    {% endautoescape %}
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-tablet-100">
+                <div class="imagem-graficos">
+                    {% autoescape off %}
+                    {{figura_tipos_produtos|safe}}
+                    {% endautoescape %}
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+            <a class="btn btn-success btn-lg" id="download-relatório" href="{% static 'relatorio/Relatorio_Base_CSI_20191213.pdf' %}"
+                type="submit">Baixe o relatório <b>Serviços Climáticos no Brasil</b></a>
+        </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+            <span><br><hr id="linha-vertical"><br></span>
+    </div>
+    
+</body>
+{% endblock content %}

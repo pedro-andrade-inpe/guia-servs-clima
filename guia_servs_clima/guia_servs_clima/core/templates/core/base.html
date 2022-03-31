@@ -1,0 +1,221 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}INPE - Guia de Serviços Climáticos{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="shortcut icon" href="#">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/ozk1yen.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{% static 'fa/css/all.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+        {% block extra_css %}
+        {% endblock %}
+        <!-- Style CSS -->
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <header class="header mb-5 header-bg">
+
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ms-auto">
+                    <a class="navbar-brand" href="#">GOV BR</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page">PARTICIPE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SERVIÇOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">LEGISLAÇÃO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ORGÃOS DO GOVERNO</a>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="header-content col-md-10 col-sm-12 pt-5">
+                            <h3 class="relative-parent">GUIA</h3>
+                            <h1>Serviços Climáticos</h1>
+                            <h4 class="mt-4 h4-guia">O guia de provedores de serviços climáticos brasileiros</h4>
+                            <h6 class="mt-4 text-white">Idealização e realização: <b style="color:#FBD3C4">INPE, MCTI e GIZ</b></h6>
+                        </div>
+                        <div class="col-md-2 d-flex flex-column menu-orange-mobile">
+                            <div class="accordion" id="accordionPanelMenu">
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="panelsMenu_options">
+                                        <button class="accordion-button collapsed my-accordion-button" id="accordion-menu" onclick="expandirRecolherMenu(this)" type="button" data-bs-toggle="collapse" data-bs-target="#panelsMenu_options_principal" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                            <div class="btn-menu">menu</div>
+                                        </button>
+                                    </div>
+                                    <div id="panelsMenu_options_principal" class="accordion-collapse collapse" data-bs-target="lista-itens-accordion" aria-labelledby="panelsMenu_options">
+                                        <div class="accordion-body">
+                                            <ul class="lista-item">
+                                                <br>
+                                                <li><h5><a class="item" href="{% url 'home' %}">BUSCA</a></h5></li>
+                                                <hr id="entre-itens" >
+                                                <li><h5><a class="item" href="{% url 'organizacao_filtro'%}">VER TODAS AS ORGANIZAÇÕES</a></h5><li>
+                                                <hr id="entre-itens">
+                                                <li><h5><a class="item" href="{% url 'organizacao_criar' %}">CADASTRE SUA ORGANIZAÇÃO</a></h5><li>
+                                                <hr id="entre-itens">
+                                                <li><h5><a class="item" href="{% url 'link-forum' %}">FÓRUM</a></h5><li>
+                                                <hr id="entre-itens">
+                                                <li><h5><a class="item" href="{% url 'saiba_mais' %}">SAIBA MAIS</a></h5><li>
+                                                <hr id="entre-itens">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!--Fim Header-->
+
+        
+        {% block content %}
+        {% endblock %}
+
+       <!--Base Footer-->
+        <div class="container-fluid mt-5"> 
+            <div class="row">
+                <div class="offset-md-3 col-md-6 col-sm-12 col-tablet-100 col-tablet-margin">
+                    <div id="card-home" class="card text-white">
+                        <div class="card-body" id="card-personalizado">
+                            <div class="card-title">
+                                <h4>O QUE SÃO SERVIÇOS CLIMÁTICOS</h4>
+                            </div>
+                            <br>
+                            <p>É o processo de fornecimento e customização de informações climáticas
+                                para apoiar indivíduos e organizações a tomarem decisões para ajudar a
+                                sociedade a se adaptar à variabilidade e às mudanças climáticas.<br>
+                            </p>                            
+                            <a href="{% url 'saiba_mais' %}" class="btn btn-outline-dark saiba-mais">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="row bg-dark bg-dark-img text-white guia-servicos">
+                    <div>
+                        <img class="imagem-ondulacao-laranja" src="{% static 'images/ondulacao-laranja.svg' %}" alt="Ondulação Laranja">
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <h5> SOBRE O <b>GUIA DE SERVIÇOS CLIMÁTICOS</b></h5>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-tablet-100">
+                        <div class="padding-col-r">
+                            <p>O Guia Serviços Climáticos apoia o Brasil na implementação do Plano Nacional de
+                                Adaptação à Mudança do Clima (PNA). O objetivo dessa iniciativa é facilitar a conexão 
+                                entre usuários e provedores de dados, informações e produtos sobre tempo e clima, de 
+                                forma a apoiar a sociedade a se adaptar à mudança do clima. Essa iniciativa contribui 
+                                para a Agenda 2030 e os Objetivos de Desenvolvimento Sustentável (ODS) das Nações  Unidas. Mais especificamente,
+                                o ODS 13 (Ação contra a mudança do clima) e ODS 17  (Parcerias e meios de comunicação).
+                            </p>
+                            <p>Um mecanismo de filtro auxilia o usuário a identificar as iniciativas, as organizações,
+                                os  serviços específicos e os conjuntos de dados climáticos que correspondem à sua  necessidade.
+                                Ainda, o FORUM permite tirar dúvidas, enviar solicitações, participar de  discussões, fazer anúncios 
+                                e divulgar eventos.
+                            </p>
+                            <p>O Guia está em constante atualização e permite o cadastro de novas 
+                                iniciativas e  organizações provedoras de dados, informações e produtos
+                                sobre tempo e clima.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-tablet-100">
+                        <div class="padding-col-l">
+                            <p>O GUIA SERVIÇOS CLIMÁTICOS foi idealizado e realizado em 2021 pelo Instituto
+                                Nacional de Pesquisas Espaciais (INPE) e o Ministério da Ciência, Tecnologia
+                                e Inovações (MCTI), com apoio do projeto Ampliação dos Serviços Climáticos para
+                                Investimentos em Infraestrutura (CSI) da Deutsche Gesellscha für Internationale
+                                Zusammenarbeit (GIZ) financiado pela Iniciativa Internacional de Proteção do Clima
+                                (Internationalen Klimaschutzinitiative - IKI) do MinistérioFederal do Meio Ambiente,
+                                Proteção da Natureza, e Segurança Nuclear da Alemanha (Bundesministeriums für Umwelt,
+                                Naturschutz und Reaktorsicherheit - BMU).
+                            </p>
+                            <div class="d-flex img-guia-clima">
+                                <a href="">
+                                    <img src="{% static 'images/logo/guia-servicos-climaticos_OBS_1.png' %}" alt="Organização Social do MCTI">
+                                </a>
+                                <a href="">
+                                    <img src="{% static 'images/logo/guia-servicos-climaticos_OBS_3.png' %}" alt="Organização Social do MCTI">
+                                </a>
+                                <a href="">
+                                    <img src="{% static 'images/logo/guia-servicos-climaticos_OBS_2.png' %}" alt="Organização Social do MCTI">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <footer>
+            <div class="container"id="container-img-organizadores">
+                    <a href="http://www.inpe.br/" target="_blank" class="logo-inpe">
+                        <img class="img-gov-br" src="{% static 'images/logo/logoGoverno.png' %}" alt="Instiuto Nacional de Pesquisas Espaciais INPE">
+                    </a>
+                    <a href="https://www.giz.de/en/html/index.html" target="_blank" class="logo-giz">
+                        <img class="img-gov-inpe" src="{% static 'images/logo/bmu_giz_PT.svg' %}" alt="GIZ">
+                    </a>
+            </div>
+        </footer>
+        <!--Base Footer-->
+
+        <!-- JS Libs -->
+        <script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <!-- JS Libs -->
+        
+        <!-- Scripts --> 
+        {% block js %}
+        <script>
+            function expandirRecolherMenu(element){
+                var menuExpandido = document.getElementById("accordion-menu").ariaExpanded;
+                var mostrarItens = document.getElementsByClassName('btn-menu');
+                if(menuExpandido === "true" ){
+                    mostrarItens[0].innerHTML = "<div style=margin-left:8vh;>recolher</div>";
+                    document.getElementsByClassName('my-accordion-button')[0].style["margin-left"] = "4vh"
+                } else {
+                    mostrarItens[0].innerHTML = "menu";
+                    document.getElementsByClassName('my-accordion-button')[0].style["margin-left"] = "0vh"
+                }
+            }
+        </script>
+        <script>
+            let items = document.querySelectorAll('.carousel .carousel-item')
+
+            items.forEach((el) => {
+                const minPerSlide = 3
+                let next = el.nextElementSibling
+                for (var i=1; i<minPerSlide; i++) {
+                    if (!next) {
+                        // wrap carousel by using first child
+                        next = items[0]
+                    }
+                    let cloneChild = next.cloneNode(true)
+                    el.appendChild(cloneChild.children[0])
+                    next = next.nextElementSibling
+                }
+                })
+        </script>
+        {% endblock js%}
+        
+        {% block extrajs %}       
+        {% endblock extrajs %}
+    </body>
+</html>

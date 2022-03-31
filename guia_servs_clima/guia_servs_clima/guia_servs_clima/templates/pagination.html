@@ -1,0 +1,28 @@
+{% load pagination_query_string %}
+<nav aria-label="Navegação de Páginas">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}&{% pagination_query_string request %}" aria-label="Anterior">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Anterior</span>
+            </a>
+        </li>
+        {% endif %}
+        <li class="page-item">
+        <span class="current">
+            <a class="page-link" aria-label="Anterior">
+                {{ page_obj.number }}
+            </a>
+        </li>
+        </span>
+        {% if page_obj.has_next %}
+        <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}&{% pagination_query_string request %}" aria-label="Próximo">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Próximo</span>
+        </a>
+        </li>
+        {%endif%}
+    </ul>
+</nav>

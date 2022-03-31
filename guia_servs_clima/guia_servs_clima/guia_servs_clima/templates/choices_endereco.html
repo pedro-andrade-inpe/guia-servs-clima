@@ -1,0 +1,28 @@
+<!--Template Choices Endereço-->
+<div class="col-md-6 col-sm-12">
+  <div class="form-group">
+    <label for="municipio_uf" class="form-label">Estado onde fica a sede</label>
+    <select
+      name="municipio_uf"
+      class="form-select"
+      id="municipio_uf"
+      onchange="changeUF(this);"
+      data-app_label="guia_servs_clima"
+      data-object_name="MunicipioOrdenado"
+      required
+    >
+      {% for uf in form.lista_ufs %}
+      <option value="{{uf.id_ibge}}" {% if uf.id_ibge == form.uf_selecionado %}selected{% endif %} >{{uf.nome}}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+<div class="col-md-6 col-sm-12">
+  <div class="form-group">
+    <label for="id_municipio" class="form-label">Cidade onde fica a sede</label>
+    <select name="municipio" class="form-select" id="id_municipio" required>
+      <option value="" selected="">--</option>
+    </select>
+  </div>
+</div>
+<!--Template Choices Endereço-->

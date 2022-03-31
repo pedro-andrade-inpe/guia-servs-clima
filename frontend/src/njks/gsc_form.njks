@@ -1,0 +1,344 @@
+{% extends "base_layout/base.njks" %}
+
+
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col col-lg-8">
+
+<h3>Cadastre sua Organização em nossa rede</h3>
+<p>Faça parte do Guia Serviços Climáticos e aumente sua visibilidade
+               para centenas de pessoas, organizações e iniciativas da rede de provedores
+               de serviços climáticos do Brasil.</p>
+        <form action="" method="POST" class="row g-3 gy-6 mt-4">    
+            
+            <div class="form-group">
+                <label for="id_nome">nome da organização</label>
+                <input type="text" name="nome" placeholder="qual o nome da sua organização" class="form-control" required="" id="id_nome">
+            </div> 
+
+
+            <div class="form-group">
+                <label for="id_website_organizacao">website da organização</label>
+                <input type="text" name="website_organizacao" maxlength="100" placeholder="www.minha.org.br" class="form-control" required="" id="id_website_organizacao">
+                
+            </div>  
+            <div class="form-group">
+                <label for="id_pessoa_contato">Pessoa de contato para a rede Adapta Brasil MCTI</label>
+                <input type="text" name="pessoa_contato" maxlength="100" placeholder="nome" da="" pessoa="" de="" contato="" class="form-control" required="" id="id_pessoa_contato">
+                
+            </div>  
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="email_contato">email de contato</label>
+                    <input type="email" name="email_contato" maxlength="254" placeholder="email" contato="" class="form-control" required="" id="id_email_contato">
+                    
+                </div> 
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="telefone_contato">telefone de contato</label>
+                    <input type="text" name="telefone_contato" maxlength="14" placeholder="(11)999" 999="" class="form-control" required="" id="id_telefone_contato">
+                </div> 
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Estado onde fifica a sede</label>
+                    <select name="municipio_uf" class="form-select" required="" id="municipio_uf" onchange="changeUF(this);" data-app_label="municipios" data-object_name="Municipio">                      
+                        <option value="" selected="">--</option>
+                        <option value="12">AC</option>
+                        <option value="27">AL</option>
+                        <option value="13">AM</option>
+                        <option value="16">AP</option>
+                        <option value="29">BA</option>
+                        <option value="23">CE</option>
+                        <option value="53">DF</option>
+                        <option value="32">ES</option>
+                        <option value="52">GO</option>
+                        <option value="21">MA</option>
+                        <option value="31">MG</option>
+                        <option value="50">MS</option>
+                        <option value="51">MT</option>
+                        <option value="15">PA</option>
+                        <option value="25">PB</option>
+                        <option value="26">PE</option>
+                        <option value="22">PI</option>
+                        <option value="41">PR</option>
+                        <option value="33">RJ</option>
+                        <option value="24">RN</option>
+                        <option value="11">RO</option>
+                        <option value="14">RR</option>
+                        <option value="43">RS</option>
+                        <option value="42">SC</option>
+                        <option value="28">SE</option>
+                        <option value="35">SP</option>
+                        <option value="17">TO</option>
+                    </select>
+                    
+                </div> 
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating">
+                    <select name="municipio" class="form-select" required="" id="id_municipio" style="width:250px;">
+                        <option value="" selected="">--</option>
+
+                    </select>
+                    <label for="">Cidade onde fifica a sede</label>
+                </div> 
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="">Tipo de organização</label>
+                    <select name="natureza_organizacao" class="form-control" required="" id="id_natureza_organizacao">
+                        <option value="" selected="">---------</option>
+
+                        <option value="1">Pública</option>
+
+                        <option value="2">Privada</option>
+
+                        <option value="3">Público-Privada</option>
+
+                        <option value="4">Não Governamental</option>
+
+                        <option value="5">Pessoa Física</option>
+
+                    </select>
+                    
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="">logo</label>
+                    <input type="file" name="logo" accept="image/*" class="form-control" id="id_logo">
+                    
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="id_sobre_organizacao">sobre organização</label>
+                    <textarea name="sobre_organizacao" cols="40" rows="10" maxlength="1000" height="100px" class="form-control" id="id_sobre_organizacao">
+                    </textarea>
+                    
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            Que tipo de produto você está oferencendo?
+                        </div>
+                        <ul id="id_tipos_produto">
+                            <li>
+                                <label for="id_tipos_produto_0">
+                                    <input type="checkbox" name="tipos_produto" value="1" id="id_tipos_produto_0">
+                                dados brutos</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_1">
+                                    <input type="checkbox" name="tipos_produto" value="2" id="id_tipos_produto_1">
+                                dados processados</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_2">
+                                    <input type="checkbox" name="tipos_produto" value="3" id="id_tipos_produto_2">
+                                boletim de monitoramento</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_3">
+                                    <input type="checkbox" name="tipos_produto" value="4" id="id_tipos_produto_3">
+                                laudo técnico</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_4">
+                                    <input type="checkbox" name="tipos_produto" value="5" id="id_tipos_produto_4">
+                                previsões, projeções e cenários</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_5">
+                                    <input type="checkbox" name="tipos_produto" value="6" id="id_tipos_produto_5">
+                                análise temporais e espaciais</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_6">
+                                    <input type="checkbox" name="tipos_produto" value="7" id="id_tipos_produto_6">
+                                levantamento de impacto, vulnerabilidade e riscos climáticos</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_7">
+                                    <input type="checkbox" name="tipos_produto" value="8" id="id_tipos_produto_7">
+                                levantamento de adaptação a mudança do clima</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_produto_8">
+                                    <input type="checkbox" name="tipos_produto" value="9" id="id_tipos_produto_8">
+                                educação e treinamento</label>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            Quais são os setores estratégicos com os quais você/sua organização trabalha?
+                        </div>
+                        <ul id="id_setores_economicos">
+                            <li>
+                                <label for="id_setores_economicos_0">
+                                    <input type="checkbox" name="setores_economicos" value="1" id="id_setores_economicos_0">
+                                Agricultura</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_1">
+                                    <input type="checkbox" name="setores_economicos" value="2" id="id_setores_economicos_1">
+                                Biodiversidade e Ecosistemas</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_2">
+                                    <input type="checkbox" name="setores_economicos" value="3" id="id_setores_economicos_2">
+                                Cidades</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_3">
+                                    <input type="checkbox" name="setores_economicos" value="4" id="id_setores_economicos_3">
+                                Desastres Naturais</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_4">
+                                    <input type="checkbox" name="setores_economicos" value="5" id="id_setores_economicos_4">
+                                Indústria e Mineração</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_5">
+                                    <input type="checkbox" name="setores_economicos" value="6" id="id_setores_economicos_5">
+                                Infraestrutura</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_6">
+                                    <input type="checkbox" name="setores_economicos" value="7" id="id_setores_economicos_6">
+                                Povos e Populações Vulneráveis</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_7">
+                                    <input type="checkbox" name="setores_economicos" value="8" id="id_setores_economicos_7">
+                                Recursos Hídricos</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_8">
+                                    <input type="checkbox" name="setores_economicos" value="9" id="id_setores_economicos_8">
+                                Saúde</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_9">
+                                    <input type="checkbox" name="setores_economicos" value="10" id="id_setores_economicos_9">
+                                Segurança Alimentar e Nutricional</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_10">
+                                    <input type="checkbox" name="setores_economicos" value="11" id="id_setores_economicos_10">
+                                Zonas Costeiras</label>
+
+                            </li>
+                            <li>
+                                <label for="id_setores_economicos_11">
+                                    <input type="checkbox" name="setores_economicos" value="12" id="id_setores_economicos_11">
+                                Educação</label>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            Quais os tipos adequadas para classificar sua organização?
+                        </div>
+                        <ul id="id_tipos_organizacao">
+                            <li>
+                                <label for="id_tipos_organizacao_0">
+                                    <input type="checkbox" name="tipos_organizacao" value="1" id="id_tipos_organizacao_0">
+                                serviços meteorológicos</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_organizacao_1">
+                                    <input type="checkbox" name="tipos_organizacao" value="2" id="id_tipos_organizacao_1">
+                                serviços hidrológicos</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_organizacao_2">
+                                    <input type="checkbox" name="tipos_organizacao" value="3" id="id_tipos_organizacao_2">
+                                universidade ou centro de pesquisa</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_organizacao_3">
+                                    <input type="checkbox" name="tipos_organizacao" value="4" id="id_tipos_organizacao_3">
+                                orgão gestor ou agência reguladora</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_organizacao_4">
+                                    <input type="checkbox" name="tipos_organizacao" value="5" id="id_tipos_organizacao_4">
+                                especialista ou autônomo</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_organizacao_5">
+                                    <input type="checkbox" name="tipos_organizacao" value="6" id="id_tipos_organizacao_5">
+                                consultoria ou acessoria</label>
+
+                            </li>
+                            <li>
+                                <label for="id_tipos_organizacao_6">
+                                    <input type="checkbox" name="tipos_organizacao" value="7" id="id_tipos_organizacao_6">
+                                organização não governamental</label>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-floating">
+                    <textarea name="observacao_adicional" cols="40" rows="10" maxlength="1000" placeholder="Deixe um comentário para a equipe do guia de serviços climáticos" height="100px" class="form-control" id="id_observacao_adicional"></textarea>
+                    <label for="id_observacao_adicional">Observações adicionais (opcional)</label>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+</div>
+{% endblock content %}
+

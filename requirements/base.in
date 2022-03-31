@@ -1,0 +1,9 @@
+Django
+psycopg2-binary
+Pillow
+django-widget-tweaks
+https://github.com/znc-sistemas/django-municipios/archive/refs/heads/dj_3.zip#egg=django-municipios
+django-filter
+plotly==5.1.0
+pandas
+whitenoise

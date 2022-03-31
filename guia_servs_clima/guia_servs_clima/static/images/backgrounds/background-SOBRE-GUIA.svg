@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210.63553mm"
+   height="94.035225mm"
+   viewBox="0 0 210.63553 94.035225"
+   version="1.1"
+   id="svg79"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="background-SOBRE-GUIA.svg">
+  <defs
+     id="defs73" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="324.30508"
+     inkscape:cy="161.83333"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata76">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.18803051,-203.2931)">
+    <g
+       id="g235"
+       transform="matrix(1.0062806,0,0,1.0381854,0.00118094,19.960676)">
+      <rect
+         y="176.70204"
+         class="st6"
+         width="210.2177"
+         height="90.463768"
+         id="rect58"
+         x="-0.18803051"
+         style="fill:#05184a;stroke-width:0.13886029" />
+      <g
+         id="g148"
+         transform="matrix(0.15214565,0,0,0.15147172,5.1755265,-11.901207)">
+        <path
+           class="st12"
+           d="m 128.5,1242.31 c 0,-10.91 8.84,-19.75 19.75,-19.75 10.91,0 19.75,8.84 19.75,19.75"
+           id="path144"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#ee7555;stroke-width:2;stroke-miterlimit:10" />
+        <path
+           class="st12"
+           d="m 207.5,1241.19 c 0,10.91 -8.84,19.75 -19.75,19.75 -10.91,0 -19.75,-8.84 -19.75,-19.75"
+           id="path146"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#ee7555;stroke-width:2;stroke-miterlimit:10" />
+      </g>
+      <g
+         class="st13"
+         id="g209"
+         style="opacity:0.3"
+         transform="matrix(0.15214565,0,0,0.15147172,2.6165411,-29.791951)">
+        <path
+           class="st14"
+           d="m 1242.47,1835.05 c 33.98,0 61.52,27.54 61.52,61.52 0,33.98 -27.54,61.52 -61.52,61.52 z"
+           id="path201"
+           inkscape:connector-curvature="0"
+           style="fill:#1d5aa0" />
+        <path
+           class="st15"
+           d="m 1118.69,1712 c 33.98,0 61.52,27.54 61.52,61.52 0,33.98 -27.54,61.52 -61.52,61.52 z"
+           id="path203"
+           inkscape:connector-curvature="0"
+           style="fill:#1c3666" />
+        <path
+           class="st16"
+           d="m 1304.48,1835.05 c 33.98,0 61.52,27.54 61.52,61.52 0,33.98 -27.54,61.52 -61.52,61.52 z"
+           id="path205"
+           inkscape:connector-curvature="0"
+           style="fill:#9fc9dd" />
+        <path
+           class="st14"
+           d="m 1242.22,1835.05 c -33.98,0 -61.52,-27.54 -61.52,-61.52 0,-33.98 27.54,-61.52 61.52,-61.52 z"
+           id="path207"
+           inkscape:connector-curvature="0"
+           style="fill:#1d5aa0" />
+      </g>
+    </g>
+  </g>
+</svg>

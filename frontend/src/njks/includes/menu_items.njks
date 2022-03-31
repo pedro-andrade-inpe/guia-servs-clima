@@ -1,0 +1,9 @@
+
+<ul class="nav flex-column" id="nav_accordion">
+    
+    <li class="nav-item"><a href="index.html" class="nav-link"><i class="far fa-circle"></i>Início</a></li>
+    <li class="nav-item"><a href="bayer_ri_evento_list.html" class="nav-link"><i class="fas fa-exclamation"></i>Incidentes / Melhorias</a></li>
+    <li class="nav-item"><a href="table.html" class="nav-link"><i class="fas fa-clipboard-check"></i>Plano de Ação</a></li>
+    <li class="nav-item"><a href="mensagem.html" class="nav-link"><i class="fas fa-list-ol"></i>Relatórios</a></li>
+    
+</ul>

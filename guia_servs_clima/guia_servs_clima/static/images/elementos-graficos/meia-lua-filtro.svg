@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="65.431458mm"
+   height="65.111313mm"
+   viewBox="0 0 65.431458 65.111314"
+   version="1.1"
+   id="svg1074"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="meia-lua-filtro.svg">
+  <defs
+     id="defs1068">
+    <linearGradient
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,-335.0003,-47.678941)"
+       y2="1305.25"
+       x2="3032"
+       y1="1305.25"
+       x1="1666"
+       gradientUnits="userSpaceOnUse"
+       id="SVGID_00000136387009818597723700000010809399538191500459_">
+      <stop
+         id="stop43"
+         style="stop-color:#FBD3C4"
+         offset="0" />
+      <stop
+         id="stop45"
+         style="stop-color:#FFFFFF"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="930.1429"
+     inkscape:cy="-310.67643"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1071">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-105.79553,-185.9746)">
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,-335.0003,-47.678941)"
+       style="opacity:0.3"
+       id="g251"
+       class="st13">
+      <path
+         style="fill:#1d5aa0"
+         inkscape:connector-curvature="0"
+         id="path243"
+         d="m 1789.78,1006.15 c 33.98,0 61.52,27.54 61.52,61.52 0,33.98 -27.54,61.52 -61.52,61.52 z"
+         class="st14" />
+      <path
+         style="fill:#1c3666"
+         inkscape:connector-curvature="0"
+         id="path245"
+         d="m 1666,883.1 c 33.98,0 61.52,27.54 61.52,61.52 0,33.98 -27.54,61.52 -61.52,61.52 z"
+         class="st15" />
+      <path
+         style="fill:#9fc9dd"
+         inkscape:connector-curvature="0"
+         id="path247"
+         d="m 1851.78,1006.15 c 33.98,0 61.52,27.54 61.52,61.52 0,33.98 -27.54,61.52 -61.52,61.52 z"
+         class="st16" />
+      <path
+         style="fill:#1d5aa0"
+         inkscape:connector-curvature="0"
+         id="path249"
+         d="m 1789.53,1006.15 c -33.98,0 -61.52,-27.54 -61.52,-61.52 0,-33.98 27.54,-61.52 61.52,-61.52 z"
+         class="st14" />
+    </g>
+  </g>
+</svg>

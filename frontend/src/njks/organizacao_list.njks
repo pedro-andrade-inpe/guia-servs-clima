@@ -1,0 +1,83 @@
+{% extends "base_layout/base.njks" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">Resultados do Teste</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                FORMULARIO DE FILTRO
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                    {# Basta coloar um FOR AQUI  #}
+                    <div class="col">
+                        <div class="card shadow-sm bg-dark">
+                            <img src="{../images/Necto_Horizontal_MONO_branco01.png}" alt="">
+                        </div>
+                    </div>
+                    {# O FOR termina AQUI - o layout faz o resto. nao tem controle de tamanho nem width #}
+
+
+                    <div class="col"> {# exemplo delete  #}
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col"> {# exemplo delete  #}
+                        <div class="card shadow-sm bg-dark">
+                            <img src="../images/Necto_Horizontal_MONO_branco01.png" alt="">
+                        </div>
+                    </div>
+
+                                        
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,265 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+<!--Template Home-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <h2>Faça o teste e descubra o melhor provedor de serviços climáticos para seu projeto!</h2>
+            <p>O <strong>Guia Serviços Climáticos</strong> reúne iniciativas e organizações brasileiras
+         que fornecem dados, informações e produtos relacionados ao tempo e clima e tem o objetivo guiar pessoas,
+        projetos e organizações a encontrarem esses serviços.</p>
+        </div>
+    </div>
+    <div class="row">
+        {% include 'mensagem-sucesso.html' %}
+        <div class="col-md-12 col-sm-12">
+            <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+                <form action="{% url 'organizacao_filtro' %}" method="GET">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseOne">
+                            <span class="text-white align-middle"><strong class="number-strong">1</strong></span>
+                            <span class="ms-4 h4-500 align-middle">Que <strong>tipo de serviço</strong> você está buscando?</span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body accordion-gradient">
+
+                                <label class="container-checkbox">
+                                    <span class="first-text">Selecionar / desselecionar todas as opções</span>
+                                    <input type="checkbox" name="first-checkbox-produto" onClick="selecionarTodosTiposProduto(this)"/> 
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <div class="ml-4">
+                                    {% for checkbox in form.tipos_produto %}
+                                        <div class="input-options"> 
+                                            <label class="container-checkbox">
+                                                <span class="other-text">{{ checkbox.choice_label }}</span>
+                                                <div onclick="desselecionarTodosTiposProduto(this)">{{ checkbox }}<span class="checkmark"></span></div>
+                                            </label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            <span class="text-white align-middle"><strong class="number-strong">2</strong></span>
+                            <span class="ms-4 h4-500 align-middle">Quais são os <strong>setores e temas de interesse</strong> para seu projeto?</span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body accordion-gradient">
+
+                                <label class="container-checkbox">
+                                    <span class="first-text">Selecionar / desselecionar todas as opções</span>
+                                    <input type="checkbox" name="first-checkbox-setor" onClick="selecionarTodosSetoresEconomicos(this)"/> 
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div class="container-filter-icon">
+                                    {% for checkbox in form.setores_economicos %}
+                                       <div onclick="desselecionarTodosSetoresEconomicos(this)">{{ checkbox }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                            <span class="text-white align-middle"><strong class="number-strong">3</strong></span>
+                            <span class="ms-4 h4-500 align-middle">Você busca algum <strong>tipo específico de organização</strong>?</span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body accordion-gradient">
+
+                                <label class="container-checkbox">
+                                    <span class="first-text">Selecionar / desselecionar todas as opções</span>
+                                    <input type="checkbox" name="first-checkbox-organizacao" onClick="selecionarTodosTiposOrganizacao(this)"/> 
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <div class="container-filter-icon">
+                                    {% for checkbox in form.tipos_organizacao %}
+                                    <div onclick=desselecionarTodosTiposOrganizacao(this)>{{ checkbox }}</div>
+                                    {% endfor %}
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                            <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFour">
+                            <span class="text-white align-middle"><strong class="number-strong">4</strong></span>
+                            <span class="ms-4 h4-500 align-middle">Os <strong>serviços</strong> que você busca são pagos e/ou gratuitos?</span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingFour">
+                            <div class="accordion-body accordion-gradient">
+
+                                <label class="container-checkbox"><span class="first-text">Selecionar / desselecionar todas as opções</span>
+                                    <input type="checkbox" name="first-checkbox-pagamento" onClick="selecionarTodosTiposPagamentos(this)"/> 
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <div class="ml-4">
+                                    {% for checkbox in form.tipos_pagamento %}
+                                        <div class="input-options"> 
+                                            <label class="container-checkbox">
+                                                <span class="other-text">{{ checkbox.choice_label }}</span>
+                                                <div onclick="desselecionarTodosTiposPagamentos(this)">{{ checkbox }}<span class="checkmark"></span></div>
+                                            </label>
+                                        </div>
+                                    {% endfor %}
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="container-pular-teste">
+                                <a href="{% url 'organizacao_filtro' %}" type="submit">
+                                    <span>Pular teste e ver<br>todas as organizações</span>    
+                                <i class="bi bi-arrow-right" id="seta-pular-teste"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div id="campos_pesquisar">
+                                <button class="btn btn-success py-3 btn-pesquisa" type="submit">Pesquisar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+<!--Template Home-->
+
+{% block extrajs %}
+    <script>
+        function selecionarTodosTiposProduto(source) {
+            checkboxes = document.getElementsByName('tipos_produto');
+            for(var i=0, n=checkboxes.length;i<n;i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+
+        function desselecionarTodosTiposProduto(element){
+            var tipos_servico = document.getElementsByName('tipos_produto');
+            var first_checkbox = document.getElementsByName("first-checkbox-produto");
+            var checkboxes = 0;
+            for(var i=0, n=tipos_servico.length;i<n;i++) {
+                if (tipos_servico[i].checked === false){
+                    checkboxes = checkboxes + 1
+                }
+            }
+            if(checkboxes === 0){
+                first_checkbox[0].checked = true;
+            }
+            else{
+                first_checkbox[0].checked = false;
+            }
+        }
+
+        function selecionarTodosSetoresEconomicos(source) {
+            checkboxes = document.getElementsByName('setores_economicos');
+            for(var i=0, n=checkboxes.length;i<n;i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+
+        function desselecionarTodosSetoresEconomicos(element){
+            var setores_economicos = document.getElementsByName('setores_economicos');
+            var first_checkbox_setor = document.getElementsByName("first-checkbox-setor");
+            var checkboxes = 0;
+            for(var i=0, n=setores_economicos.length;i<n;i++) {
+                if (setores_economicos[i].checked === false){
+                    checkboxes = checkboxes + 1
+                }
+            }
+            if(checkboxes === 0){
+                first_checkbox_setor[0].checked = true;
+            }
+            else{
+                first_checkbox_setor[0].checked = false;
+            }
+        }
+
+        function selecionarTodosTiposOrganizacao(source) {
+            checkboxes = document.getElementsByName('tipos_organizacao');
+            for(var i=0, n=checkboxes.length;i<n;i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+
+        function desselecionarTodosTiposOrganizacao(element){
+            var tipos_organizacao = document.getElementsByName('tipos_organizacao');
+            var first_checkbox_organizacao = document.getElementsByName("first-checkbox-organizacao");
+            var checkboxes = 0;
+            for(var i=0, n=tipos_organizacao.length;i<n;i++) {
+                if (tipos_organizacao[i].checked === false){
+                    checkboxes = checkboxes + 1
+                }
+            }
+            if(checkboxes === 0){
+                first_checkbox_organizacao[0].checked = true;
+            }
+            else{
+                first_checkbox_organizacao[0].checked = false;
+            }
+        }
+
+        function selecionarTodosTiposPagamentos(source) {
+            checkboxes = document.getElementsByName('tipos_pagamento');
+            for(var i=0, n=checkboxes.length;i<n;i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+        function desselecionarTodosTiposPagamentos(element){
+            var tipos_pagamento = document.getElementsByName('tipos_pagamento');
+            var first_checkbox_pagamento = document.getElementsByName("first-checkbox-pagamento");
+            var checkboxes = 0;
+            for(var i=0, n=tipos_pagamento.length;i<n;i++) {
+                if (tipos_pagamento[i].checked === false){
+                    checkboxes = checkboxes + 1
+                }
+            }
+            if(checkboxes === 0){
+                first_checkbox_pagamento[0].checked = true;
+            }
+            else{
+                first_checkbox_pagamento[0].checked = false;
+            }
+            
+        }
+
+    </script>
+{% endblock extrajs %}
+{% endblock content %}

@@ -1,0 +1,98 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/estilo-detalhes-organizacao.css' %}">
+</head>
+<div class="container">
+    {% if object.cadastro_aprovacao == True  %}
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="avatar-org" src="{{ object.organizacao_logo }}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <br>
+                        <dl>
+                            <dt>Website</dt>
+                            <dd><a id="textos-detalhes-website" href="{{object.website_organizacao}}" target="_blank">{{object.website_organizacao}}</a></dt>
+                            <dt>Contato</dt>
+                            <dd>{{object.telefone_contato}}</dd>
+                            <dd>{{object.email_contato}}</dd>
+                            <dt>Sede</dt>
+                            <dd>{{object.municipio}}</dd>
+                            <dd><br></dd>
+                            <container id="voltar-teste">
+                                <a onClick="goBack()" role="button" id="textos-detalhes">
+                                <div id="seta-voltar-resultado">
+                                    <img class="img-voltar" src="{% static 'images/icones/seta-voltar.png' %}">
+                                </div>
+                                <div id="voltar-teste-span">
+                                    <span>Voltar para resultados do teste</span>
+                                </div>
+                                </a>
+                            </container>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h3 id="textos-detalhes">{{object.nome}}</h3>
+                <h5 id="natureza-organizacao">{{object.get_natureza_organizacao_display}}</h5><br>
+                
+                <div class="col-md-12">
+                    <h5 id="h5-sobre"><b>Sobre a organização</b></h5>
+                    <p style="text-align: justify;">{{object.sobre_organizacao}}</p><br>
+                    
+                    <h5><b>Tipos de serviços que oferecem</b></h5>
+                    <table class="col-md-12">
+                        {% for org_tipo, detalhe in object.org_tipo_detalhes.items %}
+                        <tr>
+                            <th>
+                                <br>
+                                <p id="textos-detalhes-tipos">{{ org_tipo }}:</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: justify;">
+                                {{ detalhe }}
+                            </td>
+                        </tr>
+    
+                        {% endfor %}
+                    </table>
+
+                </div>
+                <br/>
+                <h5 id="h5-sobre"><b>Setores e Temas Atuação</b></h5>
+                <div class="row">{% include 'imagens_detalhes.html'%}</div>
+            </div>
+            <div class="col-md-9" id="linha-detalhes"></div>
+        </div>
+    {% endif %}
+
+</div>
+<div class="container container-detalhes-org">
+    <div class="row">
+        
+        <div class="col-md-12">
+            <h2 class="pb-2">Cadastre sua organização</h2>
+            <p>Aumente sua visibilidade para centenas de pessoas, organizações e iniciativas da rede de provedores de serviços climáticos do Brasil.</p>
+            <a href="{% url 'organizacao_criar' %}"><button class="btn btn-default">Cadastre agora</button></a>
+        </div>
+
+    </div>
+</div>
+<!--Template Detalhes Organização-->
+{% block extrajs %}
+<script>
+    function goBack() {
+    window.history.back()
+    }
+</script>
+{% endblock extrajs %}
+{% endblock %}
+

@@ -1,0 +1,6 @@
+{% include "django/forms/widgets/input.html" %}
+<label class="mb-5 mx-5 d-none-checkbox-filter" style="--bg-image: url('/static/images/svg/{{ widget.attrs.slug }}.svg');
+--bg-image-checked: url('/static/images/svg/{{ widget.attrs.slug }}_checked.svg');"
+for="{{ widget.attrs.id }}">
+    {{ widget.label }}
+</label>

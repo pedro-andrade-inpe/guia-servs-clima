@@ -1,0 +1,40 @@
+{% extends "base_layout/base.njks" %}
+
+{% block content %}
+    
+<div class="row">
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">logo Organizção</div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <dl>
+                    <dt>Website</dd>
+                    <dd><a href="https://www.link.website.org">{www.link.website.org}</a></dt>
+                    <dt>Contato</dd>
+                    <dd>{(11) 999 999 999}</dt>
+                    <dd>{contato@mail.com}</dt>
+                    <dt>Sede</dd>
+                    <dd>{nome da cidade (SU)}</dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <h4>{Nome da Organização}</h4>
+        <h5>Sobre a organização</h5>
+        <p>{Texto do "sobre a organização"... O ADAPTA BRASIL MCTI é voltado para organizações que trabalham com bases de dados referentes ao clima e tem o objetivo de conectar pessoas, projetos e organizações que estão em busca de bases de dados e informações climáticas de qualidade. O ADAPTA BRASIL MCTI é voltado para organizações que trabalham com bases de dados referentes ao clima e tem o objetivo de conectar pessoas, projetos e organizações que estão em busca de bases de dados e informações climáticas de qualidade.}</p>
+        <h5>Tipo(s) de serviço(s) que oferece</h5>
+        <ul>
+        <li><a href="">{nome servico link descricao}</a>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper, urna ut iaculis tempor, sem risus convallis metus, quis malesuada ex quam ut odio. Integer ut bibendum ligula, et interdum massa</li>
+        <li><a href="">Educação e treinamento</a>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper, urna ut iaculis tempor, sem risus convallis metus, quis malesuada ex quam ut odio.</li>
+        <li><a href="">Levantamento/estudos sobre ameaça climática</a>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper, urna ut iaculis tempor, sem risus convallis metus, quis malesuada ex quam ut odio.</li>
+        <li><a href="">Levantamento/estudos sobre ameaça climática</a>: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper, urna ut iaculis tempor, sem risus convallis metus.</li>
+        </ul>
+        <h5>Setores de Atuação</h5>
+
+    </div>
+</div>
+
+{% endblock content %}

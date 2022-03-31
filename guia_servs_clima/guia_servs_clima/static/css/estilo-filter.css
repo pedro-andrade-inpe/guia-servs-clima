@@ -1,0 +1,20 @@
+#background-diferente{
+    background: linear-gradient(to right, #FBD3C4, #FFF);
+}
+#texto-nao-encontro{
+    padding: 5% 0% 0% 10%;
+}
+#icone-forum{
+    padding-top: 15%;
+    max-width: 200px;
+}
+#btn-publica{
+    background: #FBD3C4;
+}
+#div-imagem{
+    padding: 1% 10% 3% 10%; 
+}
+#textos-filtros{
+    font-weight: bold;
+    color: #F28D6E;
+}

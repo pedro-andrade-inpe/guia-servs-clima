@@ -1,0 +1,94 @@
+{% extends "base_layout/base.njks" %}
+
+
+
+{% block content %}
+
+
+<h2>Faça o teste e descubra o melhor provedor de serviços climáticos para seu projeto!</h2>
+<p>O Guia Serviços Climáticos reúne iniciativas e organizações brasileiras que fornecem dados, informações e produtos relacionados ao tempo e clima e tem o objetivo guiar pessoas, projetos e organizações a encontrarem esses serviços.</p>
+
+
+<div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+        <div class="align-middle" style="heigh: 140px; text-align: midle;">
+         <span class="text-white align-middle" style="font-size:5rem;">1</span><span class="ms-4 h4 align-middle"> Que tipo de serviço você está buscando?</span>
+        </div>
+
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        formulario aqui 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header shadow" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        <span class="text-white align-middle" style="font-size:5rem;">2</span><span class="ms-4 h4 align-middle"> Quais são os setores econômicos de interesse para seu projeto?</span>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        forumuario aqui 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        <span class="text-white align-middle" style="font-size:5rem;">3</span><span class="ms-4 h4 align-middle">Você busca algum tipo específico de organização?</span>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        formulario aqui
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row g-0">
+        <div class="col-lg-3" style="min-height: 90px;">
+            <div class="row"><div class="col" style="min-height: 90px;"></div></div>
+            <div class="row h-100"><div class="col bg-dark">text</div></div>
+        </div>
+        <div class="col-lg-6">    
+            <div id="card-home" class="card text-white">
+                <div class="card-body">
+                    <div class="card-title"><h4>O QUE SÃO SERVIÇOS CLIMÁTICOS</h4></div>
+                    <p>É o processo de fornecimento e customização de informações climáticas para apoiar indivíduos e organizações a tomarem decisões para ajudar sociedade a se adaptar à variabilidade e às mudanças climáticas.</p>
+                    <p><button class="btn btn-outline-dark" role="button"> saiba mais </button></p>
+                </div>
+            </div>
+        </div> 
+        <div class="col-lg-3">    
+            <div class="row"><div class="col" style="min-height: 70px;"></div></div>
+            <div class="row h-100"><div class="col bg-dark">text</div></div>    
+        </div>
+    </div>
+    
+    <div class="row bg-dark text-white pt-5">
+        <div class="col-lg-12">        
+            <h5>SOBRE O GUIA DE SERVIÇOS CLIMÁTICOS</h5>
+        </div>
+    </div>
+    <div class="row bg-dark text-white">
+        <div class="col-lg-6">        
+            <p>O GUIA SERVIÇOS CLIMÁTICOS foi idealizado e realizado em 2021 pelo Insti- tuto Nacional de Pesquisas Espaciais (INPE) e o Ministério da Ciência, Tec- nologia e Inovações (MCTI), com apoio do projeto Ampliação dos Serviços Climáticos para Investimentos em Infraestrutura (CSI) da Deutsche Ge- sellschaft für Internationale Zusammenarbeit (GIZ) financiado pela Iniciati- va Internacional de Proteção do Clima (Internationalen Klimaschutzinitia- tive - IKI) do Ministério Federal do Meio Ambiente, Proteção da Natureza, e Segurança Nuclear da Alemanha (Bundesministeriums für Umwelt, Natur- schutz und Reaktorsicherheit - BMU).</p>
+            <p>Essa iniciativa apoia o Brasil na implementação do Plano Nacional de Adap- tação à Mudança do Clima (PNA). O objetivo do Guia Serviços Climáticos é apoiar a sociedade a se adaptar à mudança do clima facilitando a conexão entre usuários e provedores de dados, informações e produtos sobre tempo e clima. Essa iniciativa contribui para a Agenda 2030 e os Objetivos de Desenvolvimento Sustentável (ODS) das Nações Unidas. Mais especifica- mente, o ODS 13 Ação contra a mudança do clima e ODS 17 Parcerias e meios de comunicação.</p>
+        </div>
+        <div class="col-lg-6">
+            <p>Um mecanismo de filtragem com base em um teste auxilia o usuário a iden- tificar as iniciativas, as organizações, os serviços específicos e os conjuntos de dados climáticos que correspondem a sua necessidade. Ainda, o FORUM permite tirar dúvidas, enviar solicitações, participar de discussões, fazer anúncios e divulgar eventos. </p>
+            <p>O Guia está em constante atualização e permite o cadastramento de novas iniciativas e organizações provedoras de dados, informações e produtos sobre tempo e clima.</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

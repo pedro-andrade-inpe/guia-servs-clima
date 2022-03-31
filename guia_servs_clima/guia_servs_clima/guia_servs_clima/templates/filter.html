@@ -1,0 +1,208 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block extra_css %}
+<style>
+    .d-none-checkbox-filter{
+        display: none;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<!--Template Filter-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <h4 class="h4-resultado">Resultados do teste</h4>
+            <h6 class="mt-5">Filtros:</h6>
+            <form action="{% url 'organizacao_filtro' %}" method="GET" id="accordionPanel-filtro">
+                <div class="accordion accordion-flush">
+                    <div class="accordion-item accordion-item-filtro">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                <span class="titulo-checkbox-filtro">Tipo de serviço</span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body-filter">
+                           {% for checkbox in filter.tipos_produto %}
+                                <div class="input-filter-options-filter">
+                                    <label class="container-checkbox">
+                                        {{ checkbox }}
+                                        <span class="checkmark checkmark-orange"></span>
+                                        <span class="other-text-filter">{{ checkbox.choice_label }}</span>
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion accordion-flush">
+                    <div class="accordion-item accordion-item-filtro">
+                    
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <span class="titulo-checkbox-filtro">Setores de atuação</span>
+                            </button>
+                        </h2>
+                    
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body-filter">
+                            {% for checkbox in filter.setores_economicos %}
+                                <div class="input-filter-options-filter">
+                                    <label class="container-checkbox">
+                                        {{ checkbox }}
+                                        <span class="checkmark checkmark-orange"></span>
+                                        <span class="other-text-filter">{{ checkbox.choice_label }}</span>
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="accordion accordion-flush">
+                    <div class="accordion-item accordion-item-filtro">
+                
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                <span class="titulo-checkbox-filtro">Tipo de organização</span>
+                            </button>
+                        </h2>
+
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body accordion-body-filter">
+                            {% for checkbox in filter.tipos_organizacao %}
+                                <div class="input-filter-options-filter">
+                                    <label class="container-checkbox">
+                                        {{ checkbox }}
+                                        <span class="checkmark checkmark-orange"></span>
+                                        <span class="other-text-filter">{{ checkbox.choice_label }}</span>
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="accordion accordion-flush">
+                    <div class="accordion-item accordion-item-filtro">
+                
+                        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                <span class="titulo-checkbox-filtro">Tipo de pagamento</span>
+                            </button>
+                        </h2>
+
+                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                        <div class="accordion-body accordion-body-filter">
+                        {% for checkbox in filter.tipos_pagamento %}
+                        <div class="input-filter-options-filter">
+                            <label class="container-checkbox">
+                                    {{ checkbox }}
+                                    <span class="checkmark checkmark-orange"></span>
+                                    <span class="other-text-filter">{{ checkbox.choice_label }}</span>
+                                </label>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="container-btn-filter">
+                    <a id="botao_submit" class="btn btn-default" href="{% url 'home' %}"><i class="bi bi-arrow-counterclockwise"></i>Refazer o teste</a>
+                </div>
+                
+            </form>
+        </div>
+
+        <div class="col-md-9 col-sm-12 filter_organizacao">
+            <div class="row">
+                {% if page_obj.paginator.count%}
+                    {% for organizacao in page_obj.object_list %}
+                        <div class="col-md-4 col-sm-6 mb-5 filter-container-img">
+                            <a href="{{ organizacao.get_absolute_url }}" class="text-center">
+                                <img src="{{ organizacao.organizacao_logo }}" class="avatar-org" alt="Logotipo" />
+                                <h6 class="mt-2-2">{{ organizacao.nome }}</h6>
+                            </a>
+                        </div>
+                    {% endfor %}
+                    {% include 'pagination.html' %}
+                {% endif%}
+            </div>
+            <div class="row">
+                <div class="container-fluid p-0"></div>
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{ message }}</strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-pular-ver-todas">
+        <a href="{% url 'organizacao_filtro' %}" type="submit">
+            <span>Ver todas as organizações</span>
+            <i class="bi bi-arrow-right" id="seta-ver-todas"></i>
+        </a>
+    </div>
+
+<div class="container" id="disclaimer-inpe-filter">
+    <p>O INPE não é responsável pela veracidade ou exatidão das informações
+                    fornecidas pelas organizações e profissionais autônomos.</p>
+</div>
+
+<div class="containert meia-lua-filtro">
+    <img src="{% static  'images/elementos-graficos/meia-lua-filtro.svg' %}"/>
+</div>
+
+</div>
+<div class="container-fluid container-gradient">
+    <div class="nao-encontrou container">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-8">
+                <h4 id="h4-nao-encontrou">Não encontrou o que procurava?</h4>
+                <br>
+                <p>
+                Não se preocupe. Acesse nosso fórum, pesquise pelo conteúdo já publicado ou crie novas<br>
+                publicações em nossas páginas. Lá, você encontra mais informações sobre organizações, eventos,<br>
+                serviços climáticos e atualizações do guia.
+                </p>
+                <a class="btn btn-success btn-publique-forum" href="https://forumguiaclima.necto.com.br/">Publique em nosso fórum</a>
+            </div>
+
+            <div class="col-md-4 img-forum">
+                <img src="{% static 'images/svg/210728_assets_guia-servicos-climaticos_icone nao encontrou o que procurava.svg' %}" />
+            </div>
+            <div>
+                <img class="imagem-ondulacao-azul" src="{% static 'images/ondulacao-azul-filtro.svg' %}" alt="Ondulação Azul">
+            </div>
+        </div>
+    </div>
+</div>  
+
+<div class="container container-cadastro text-center mt-5 py-4">
+
+        <h4 id="titulo-cadastre">Cadastre sua organização</h4>
+        <p id="texto-cadastre">
+            Faça parte da rede Guia Serviços Climáticos e aumente sua visibilidade para centenas de pessoas, organizações e
+            iniciativas de fornecimentos de serviços climáticos.
+            O Guia é feito para iniciativas e organizações públicas e privadas que fornecem dados, informações e produtos
+            relacionados ao tempo e clima. Após o cadastro, uma equipe de curadores avaliará a adequação da organização
+            aos objetivos do Guia Serviços Climáticos.
+            <br><br>
+        </p>
+        <a class="btn btn-success btn-cadastre-agora" href="{% url 'organizacao_criar' %}">Cadastre agora</a>
+
+</div>
+<!--Template Filter-->
+{% endblock content %}
+{% block extrajs %}
+{% endblock extrajs %}

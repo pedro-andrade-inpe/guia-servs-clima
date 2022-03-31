@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="80.999992mm"
+   height="39.331451mm"
+   viewBox="0 0 80.999992 39.331451"
+   version="1.1"
+   id="svg589"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="ondulacao-laranja.svg">
+  <defs
+     id="defs583">
+    <linearGradient
+       gradientTransform="translate(5799,1757.5935)"
+       y2="-1587.7584"
+       x2="-4433.5"
+       y1="-1587.7584"
+       x1="-5799.5"
+       gradientUnits="userSpaceOnUse"
+       id="SVGID_00000098205653933405946880000007977404843980321698_">
+      <stop
+         id="stop60"
+         style="stop-color:#9DA6AA"
+         offset="2.663895e-07" />
+      <stop
+         id="stop62"
+         style="stop-color:#05184A"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.28392849"
+     inkscape:cx="1578.9379"
+     inkscape:cy="521.44851"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata586">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-619.52537,723.4742)">
+    <g
+       transform="matrix(0.9999999,0,0,0.97403296,492.02538,-1913.3139)"
+       id="g148">
+      <path
+         style="fill:none;stroke:#ee7555;stroke-width:2;stroke-miterlimit:10"
+         inkscape:connector-curvature="0"
+         id="path144"
+         d="m 128.5,1242.31 c 0,-10.91 8.84,-19.75 19.75,-19.75 10.91,0 19.75,8.84 19.75,19.75"
+         class="st12" />
+      <path
+         style="fill:none;stroke:#ee7555;stroke-width:2;stroke-miterlimit:10"
+         inkscape:connector-curvature="0"
+         id="path146"
+         d="m 207.5,1241.19 c 0,10.91 -8.84,19.75 -19.75,19.75 -10.91,0 -19.75,-8.84 -19.75,-19.75"
+         class="st12" />
+    </g>
+  </g>
+</svg>

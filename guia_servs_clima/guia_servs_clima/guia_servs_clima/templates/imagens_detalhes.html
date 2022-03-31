@@ -1,0 +1,51 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<div class="row">
+    {% for setor in setores_economicos %}
+    <div class="col-md-3 col-sm-6 mb-5 img-texto-centro">
+        {% if setor == "Agricultura" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-agricultura-azul.svg' %}" alt="Agricultura">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Segurança Alimentar e Nutricional" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-seg-alimentar-azul.svg' %}" alt="Segurança Alimentar e Nutricional">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Educação e Treinamento" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-educacao-azul.svg' %}" alt="Educação e Treinamento">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Zonas Costeiras" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icones costeiras-azul.svg' %}" alt="Zonas Costeiras">    
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Biodiversidade e Ecosistemas" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-biodiversidade-azul.svg' %}" alt="Biodiversidade e Ecosistemas">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Cidades" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-cidades-azul.svg' %}" alt="Cidades">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Desastres Naturais" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-desastres-azul.svg' %}" alt="Desastres Naturais">    
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Indústria e Mineração" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-mineracao-azul.svg' %}" alt="Indústria e Mineração">    
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Infraestrutura" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-infra-azul.svg' %}" alt="Infraestrutura">    
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Povos e Populações Vulneráveis" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-vulneravel-azul.svg' %}" alt="Povos e Populações Vulneráveis">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Recursos Hídricos" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-hidrico-azul.svg' %}" alt="Recursos hídricos">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% elif setor == "Saúde" %}
+            <img class="icones-setores-economicos" src="{% static 'images/icones/setores-economicos/icone-saude-azul.svg' %}" alt="Saúde">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% else%}
+            <img class="icones-setores-economicos" src="#" alt="Não a imagem relacionado a este tipo de setor">
+            <h6 class="setores-text">{{setor}}</h6>
+        {% endif %}
+    </div>
+{% endfor %}
+<br><br><br>
+</div>

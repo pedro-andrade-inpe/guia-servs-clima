@@ -1,0 +1,78 @@
+#linha-detalhes{
+    text-align:center;
+    width: 100%;
+    height: 2px; 
+    background:#F28D6E;
+    border-color:#F28D6E;
+}
+
+#textos-detalhes{
+    color: #F28D6E;
+    display: flex;
+}
+
+
+#voltar-teste{
+    display: flex;
+}
+
+#voltar-teste-span{
+    display: flex;
+    align-items: center;
+    width: 35%;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+#textos-detalhes-website{
+    color: #EE7555;
+    text-transform: lowercase;
+}
+
+#textos-detalhes-tipos{
+    color: #F28D6E;
+    text-transform: none !important;
+    font-family: 'Muli', sans-serif;
+}
+
+#natureza-organizacao {
+    color: darkgrey;
+    font-style: italic;
+}
+
+.btn-orange{
+    background: #fff;
+    border-color:#F28D6E;
+    border-style: solid;
+    color: #F28D6E;
+    font-size:large;
+    text-align: center;
+    display: inline-block;
+    border-width: 2px
+}
+.icones-setores-economicos{
+    max-width: 180px;
+}
+
+.texto-detalhes-servico
+{
+    color: #05184A;
+    
+}
+.tipos-servico{
+    font-size: large;
+}
+
+.img-texto-centro{
+    text-align: center;
+}
+
+#h5-sobre {
+    color: #06174a!important;
+    font-family: 'Muli', sans-serif;
+}
+
+.setores-text {
+    margin-top: -15px !important;
+}
+
