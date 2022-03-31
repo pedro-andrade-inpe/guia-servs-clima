@@ -637,11 +637,15 @@ footer .img-gov-br {
 
 }
 
+footer .img-gov-adapta {
+  max-width: 800px;
+}
+
 footer .img-gov-inpe {
   max-width: 800px;
 }
 
-.img-gov-br, .img-gov-inpe {
+.img-gov-br, .img-gov-inpe, .img-gov-adapta {
     height: auto;
 }
 
