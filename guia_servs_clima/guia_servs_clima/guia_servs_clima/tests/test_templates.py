@@ -274,7 +274,7 @@ def test_saiba_mais_contains_string(resp_saiba_mais):
     assert_contains(
         resp_saiba_mais,
         'Se você tiver dúvidas ou reclamações sobre este website, '
-        'entre em contato conosco pelo e-mail: contato@dpi.inpe.br'
+        'entre em contato conosco pelo e-mail: atende.diiav@inpe.br'
         in resp_saiba_mais.content.decode('utf-8')
     )
     assert_contains(
@@ -282,7 +282,7 @@ def test_saiba_mais_contains_string(resp_saiba_mais):
         'O cadastro será analisado pelo corpo gestor do Guia Serviços Climáticos. '
         'Assim que possível, entraremos em contato pelo e-mail fornecido no formulário. '
         'Para atualizar, alterar ou remover o cadastro, '
-        'entre em contato com o administrador do GuiaClima através do e-mail: contato@dpi.inpe.br'
+        'entre em contato com o administrador do GuiaClima através do e-mail: atende.diiav@inpe.br'
         in resp_saiba_mais.content.decode('utf-8')
     )
 

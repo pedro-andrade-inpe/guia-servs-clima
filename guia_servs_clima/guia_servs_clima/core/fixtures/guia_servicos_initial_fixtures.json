@@ -56122,7 +56122,7 @@
       "model": "guia_servs_clima.tipoproduto",
       "pk": 2,
       "fields": {
-         "nome": "Dados processados"
+         "nome": "Dados processados (análises espaciais e temporais)"
       }
    },
    {
@@ -56143,14 +56143,14 @@
       "model": "guia_servs_clima.tipoproduto",
       "pk": 5,
       "fields": {
-         "nome": "Previsões, projeções e cenários"
+         "nome": "Previsões (tempo e climática sazonal)"
       }
    },
    {
       "model": "guia_servs_clima.tipoproduto",
       "pk": 6,
       "fields": {
-         "nome": "Análise temporais e espaciais"
+         "nome": "Projeções e cenários de mudança do clima"
       }
    },
    {
