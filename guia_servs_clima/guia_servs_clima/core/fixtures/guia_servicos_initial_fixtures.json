@@ -56129,42 +56129,42 @@
       "model": "guia_servs_clima.tipoproduto",
       "pk": 3,
       "fields": {
-         "nome": "Boletim de monitoramento"
+         "nome": "Boletim de monitoramento climático"
       }
    },
    {
       "model": "guia_servs_clima.tipoproduto",
       "pk": 4,
       "fields": {
-         "nome": "Laudo técnico"
+         "nome": "Laudo meteorológico"
       }
    },
    {
       "model": "guia_servs_clima.tipoproduto",
       "pk": 5,
       "fields": {
-         "nome": "Previsões (tempo e climática sazonal)"
+         "nome": "Previsão do tempo ou climática sazonal"
       }
    },
    {
       "model": "guia_servs_clima.tipoproduto",
       "pk": 6,
       "fields": {
-         "nome": "Projeções e cenários de mudança do clima"
+         "nome": "Dados de projeções ou análise ou avaliação de cenários de mudança do clima"
       }
    },
    {
       "model": "guia_servs_clima.tipoproduto",
       "pk": 7,
       "fields": {
-         "nome": "Levantamento de impacto, vulnerabilidade e riscos climáticos"
+         "nome": "Análise ou avaliação de riscos e vulnerabilidades climáticas"
       }
    },
    {
       "model": "guia_servs_clima.tipoproduto",
       "pk": 8,
       "fields": {
-         "nome": "Levantamento de adaptação a mudança do clima"
+         "nome": "Análise ou avaliação de medidas de adaptação à mudança do clima"
       }
    },
    {

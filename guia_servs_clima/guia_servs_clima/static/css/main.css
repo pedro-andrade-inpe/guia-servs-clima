@@ -642,7 +642,7 @@ footer .img-gov-adapta {
 }
 
 footer .img-gov-inpe {
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 .img-gov-br, .img-gov-inpe, .img-gov-adapta {
@@ -890,6 +890,13 @@ footer .img-gov-inpe {
     margin-bottom: 2%;
 }
 
+#larger-inpe {
+    font-family: 'Source Sans Pro';
+    font-weight: 400 !important;
+    font-size: 1.6rem !important;
+}
+
+
 #disclaimer-inpe {
     font-family: 'Source Sans Pro';
     font-weight: 400 !important;
@@ -909,6 +916,8 @@ footer .img-gov-inpe {
     display: flex;
     padding-top: 1%;
     color: #ad0000 !important;
+    font-weight: 500;
+    font-size: 1.4rem !important;
     justify-content: flex-end;
 }
 

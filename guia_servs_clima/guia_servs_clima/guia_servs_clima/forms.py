@@ -68,10 +68,10 @@ class OrganizacaoForm(forms.ModelForm):
             "placeholder"
         ] = "Fale um pouco sobre sua organização."
         self.fields["observacao_adicional"].widget.attrs["placeholder"] = (
-            "Deixe um comentário para a equipe do Guia de Serviços Climáticos."
+            "Deixe um comentário para a equipe do CClima."
         )
         self.fields["pessoa_contato"].widget.attrs["placeholder"] = (
-            "Apenas para comunicação com o administrador do GuiaClima"
+            "Apenas para comunicação com o administrador do CClima"
         )
 
         self.forms_tipos_produto = []
@@ -124,7 +124,7 @@ class OrganizacaoTipoProdutoForm(forms.Form):
         widget=forms.Textarea(
             attrs={
                 "rows": 4,
-                "placeholder": "Adicione uma descrição mais detalhada sobre este serviço.\
+                "placeholder": "Adicione uma descrição mais detalhada sobre este serviço incluindo referências e links sempre que possível\
                     \n(limite de 500 caracteres)",
                 "style": "background:#9FC9DD; display: none;",
             },
