@@ -12,18 +12,18 @@
     <div class="row">
         <div class="mb-5 align-items-center">
             <h2>Cadastre sua organização em nossa rede</h2>
-            <p>Faça parte do catálogo digital de provedores de serviços climáticos e aumente sua visibilidade
+	    <p id="larger-inpe">
+            Faça parte do catálogo digital de provedores de serviços climáticos e aumente sua visibilidade
             para centenas de pessoas, organizações e iniciativas da rede de provedores
-            de serviços climáticos do Brasil.<br> Para atualizar, alterar ou remover o cadastro,
+	    de serviços climáticos do Brasil.<br> Para <strong>atualizar</strong>, <strong>alterar</strong> ou <strong>remover</strong> o cadastro,
             entre em contato com o administrador do CClima através do e-mail: atende.diiav@inpe.br
-            </p>
         </div>
             <form action="#" method="POST" class="row g-3 gy-6" enctype="multipart/form-data" novalidate>
                 {% csrf_token %}
                 {%include 'error-fields.html' %}
                 <div class="col-md-12 col-sm-12">
                     <div class="form-group">
-                        <label class="form-label" for="id_nome">Nome da organização ou nome fantasia da empresa (para profissional autônomo)</label>
+                        <label class="form-label" for="id_nome">Nome da organização (caso pertinente, favor incluir o nome do departamento, divisão ou laboratório) ou nome fantasia da empresa (para profissional autônomo)</label>
                         {{form.nome|add_class:"form-control"}}
                     </div>
                     <div class="text-danger">
@@ -86,7 +86,7 @@
                             data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseOne">
                         <span class="text-white align-middle"><strong class="number-strong">1</strong></span>
-                        <span class="ms-4 h4-500 align-middle"><strong>Que tipo de produto você está oferecendo?</strong></span>
+			<span class="ms-4 h4-500 align-middle">Que <strong>tipo de produto ou serviço</strong> você oferece?</span>
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
@@ -102,6 +102,7 @@
                                         </label>
                                     </div>
                                 {% endfor %}
+		    Em caso de dúvida sobre a definição do produto ou serviço, consulte o Glossário em ‘SAIBA MAIS’.
                             </div>
                         </div>
                     </div>
@@ -114,7 +115,7 @@
                         <button class="accordion-button collapsed accordion-height" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                         <span class="text-white align-middle"><strong class="number-strong">2</strong></span>
-                        <span class="ms-4 h4-500 align-middle"><strong>Quais são os setores e temas com os quais você/sua organização trabalha?</strong></span>
+			<span class="ms-4 h4-500 align-middle">Quais são os <strong>setores e temas</strong> com os quais você/sua organização trabalha?</span>
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
@@ -137,7 +138,7 @@
                             data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseThree">
                         <span class="text-white align-middle"><strong class="number-strong">3</strong></span>
-                        <span class="ms-4 h4-500 align-middle"><strong>Quais os tipos mais adequados para classificar sua organização?</strong></span>
+			<span class="ms-4 h4-500 align-middle">Quais os <strong>tipos mais adequados</strong> para classificar sua organização?</span>
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
@@ -161,7 +162,7 @@
                             data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseFour">
                         <span class="text-white align-middle"><strong class="number-strong">4</strong></span>
-                        <span class="ms-4 h4-500 align-middle"><strong>Os serviços oferecidos pela organização são pagos e/ou gratuitos?</strong></span>
+			<span class="ms-4 h4-500 align-middle">Os serviços oferecidos pela organização são <strong>pagos e/ou gratuitos</strong>?</span>
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
@@ -214,10 +215,10 @@
                       id="btn-submit-form" disabled type="submit">Submeter Cadastro</button></span>
                 </div>
                 <div style="text-align:center; padding:2rem; line-height:2rem">
-                    <p>
+                    <p id="larger-inpe">
                         O cadastro será analisado pelo corpo gestor do CClima.
                         Assim que possível, entraremos em contato pelo e-mail fornecido no formulário.
-                        Para atualizar, alterar ou remover o cadastro, entre em contato com o administrador do CClima através do e-mail: atende.diiav@inpe.br
+			Para <strong>atualizar</strong>, <strong>alterar</strong> ou <strong>remover</strong> o cadastro, entre em contato com o administrador do CClima através do e-mail: atende.diiav@inpe.br
                     </p>
                 </div>
             </form>

@@ -1,6 +1,15 @@
 {% load static %}
 <html>
     <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q3MYFSGC0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-9Q3MYFSGC0');
+	</script>
+
         <meta charset="utf-8">
         <title>{% block title %}INPE - Guia de Serviços Climáticos{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -72,7 +81,7 @@
                                                 <hr id="entre-itens">
                                                 <li><h5><a class="item" href="{% url 'organizacao_criar' %}">CADASTRE SUA ORGANIZAÇÃO</a></h5><li>
                                                 <hr id="entre-itens">
-                                                <li><h5><a class="item" href="{% url 'link-forum' %}">FÓRUM</a></h5><li>
+                                                <li><h5><a class="item" href="https://www.cclima-forum.dpi.inpe.br/">FÓRUM</a></h5><li>
                                                 <hr id="entre-itens">
                                                 <li><h5><a class="item" href="{% url 'saiba_mais' %}">SAIBA MAIS</a></h5><li>
                                                 <hr id="entre-itens">
